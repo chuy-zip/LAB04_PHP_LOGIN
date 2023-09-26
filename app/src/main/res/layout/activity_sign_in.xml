@@ -8,9 +8,9 @@
     android:gravity="top|center"
     android:paddingRight="30dp"
     android:paddingLeft="30dp"
+    android:background="#1F2022"
     tools:context=".SignInActivity">
 
-    <!-- Title TextView -->
 
     <!-- Title TextView -->
     <TextView
@@ -19,11 +19,32 @@
         android:text="Sign In"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:paddingTop="240dp"
+        android:paddingTop="140dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
         android:textColor="#98c1d9"
         />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#98c1d9"
+        app:cardElevation="0dp"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/textViewErrorSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:gravity="center"
+            android:padding="30dp"
+            android:text="El usuario ingresado ya existe, por favor ingrese uno diferente"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"
+            />
+    </androidx.cardview.widget.CardView>
 
     <!-- Email EditText -->
     <EditText
@@ -35,8 +56,8 @@
         android:gravity="center"
         android:padding="20dp"
         android:backgroundTint="#98c1d9"
-        android:textColor="#FF474E56"
-        android:textColorHint="#FF474E56"/>
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"/>
 
     <!-- Password EditText -->
 
@@ -49,8 +70,8 @@
         android:gravity="center"
         android:padding="20dp"
         android:backgroundTint="#98c1d9"
-        android:textColor="#FF474E56"
-        android:textColorHint="#FF474E56"/>
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"/>
 
     <!-- Login Button -->
     <Button

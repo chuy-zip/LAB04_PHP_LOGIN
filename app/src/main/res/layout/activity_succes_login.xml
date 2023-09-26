@@ -10,6 +10,7 @@
     android:paddingLeft="20dp"
     android:paddingTop="30dp"
     android:paddingBottom="30dp"
+    android:background="#FFFFFF"
     tools:context=".SuccesLogin">
 
     <androidx.cardview.widget.CardView

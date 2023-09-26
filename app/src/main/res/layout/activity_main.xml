@@ -17,11 +17,31 @@
         android:text="Log In"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:paddingTop="240dp"
+        android:paddingTop="140dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
         android:textColor="#98c1d9"
         />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#474E56"
+        app:cardElevation="0dp"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/textViewErrorLogin"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:gravity="center"
+            android:padding="30dp"
+            android:text="Usuario y/o contraseña invalidos. Por favor intente de nuevo."
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+    </androidx.cardview.widget.CardView>
 
     <!-- Email EditText -->
     <EditText
@@ -54,11 +74,14 @@
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#98c1d9"
+        android:backgroundTint="#474E56"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Log In"
         android:textSize="24sp"
         android:textColor="#FFFFFF" />
+
+
 
     <TextView
         android:id="@+id/registerText"
@@ -67,7 +90,7 @@
         android:text="Registrarse"
         android:padding="30dp"
         android:textSize="24sp"
-        android:textColor="#FF474E56"
+        android:textColor="#98c1d9"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
         />
