@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         errorTextView = findViewById(R.id.textViewErrorLogin)
 
         registerText.paintFlags = registerText.paintFlags or Paint.UNDERLINE_TEXT_FLAG
+        errorTextView.visibility = View.GONE
 
         buttonLogin.setOnClickListener {
             val username = editTextEmailUsername.text.toString()
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                 val jwt = loginAndStoreJwt(applicationContext, username, password)
 
                 if(jwt != null){
+                    errorTextView.visibility = View.GONE
                     val intent = Intent(applicationContext, SuccesLogin::class.java)
 
                     intent.putExtra("username", username)
@@ -84,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         println(json.toString())
 
         val request = Request.Builder()
-            .url("http://127.0.0.1/phpFolderPPM/php/public/authenticate.php") // Reemplaza con la URL de tu servidor
+            .url("http://192.168.43.105/phpFolderPPM/php/public/authenticate.php") // Reemplaza con la URL de tu servidor
             .post(requestBody)
             .build()
 

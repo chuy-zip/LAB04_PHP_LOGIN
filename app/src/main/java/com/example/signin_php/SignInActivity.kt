@@ -19,10 +19,10 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
+        signInErrorTextView = findViewById(R.id.textViewErrorSignIn)
         editTextEmailUser = findViewById(R.id.editTextEmailUser)
         editTextPass = findViewById(R.id.editTextPass)
         buttonSignIn = findViewById(R.id.buttonSignIn)
-        signInErrorTextView = findViewById(R.id.textViewErrorSignIn)
 
         buttonSignIn.setOnClickListener {
 
@@ -30,6 +30,7 @@ class SignInActivity : AppCompatActivity() {
             val password = editTextPass.text.toString()
 
             if(signInIsValid(username)){
+                signInErrorTextView.visibility = View.GONE
                 val intent = Intent(this, SuccesLogin::class.java)
 
                 intent.putExtra("username", username)

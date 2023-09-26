@@ -39,7 +39,7 @@
             android:padding="30dp"
             android:text="Usuario y/o contraseña invalidos. Por favor intente de nuevo."
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:visibility="gone"/>
     </androidx.cardview.widget.CardView>
 
