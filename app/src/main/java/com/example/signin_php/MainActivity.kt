@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                 val jwt = loginAndStoreJwt(applicationContext, username, password)
 
                 if(jwt != null){
+
                     errorTextView.visibility = View.GONE
                     val intent = Intent(applicationContext, SuccesLogin::class.java)
 
@@ -61,16 +62,12 @@ class MainActivity : AppCompatActivity() {
                     errorTextView.visibility = View.VISIBLE
                 }
             }
-
-
-
         }
 
         registerText.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
-
     }
 
     suspend fun loginAndStoreJwt(context: Context, username: String, password: String): String? {

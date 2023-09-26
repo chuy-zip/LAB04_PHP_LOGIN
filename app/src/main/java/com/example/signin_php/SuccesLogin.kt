@@ -24,7 +24,5 @@ class SuccesLogin : AppCompatActivity() {
         buttonSuccess.setOnClickListener {
             editTextSuccess.setText("$username y $password")
         }
-
-
     }
 }
