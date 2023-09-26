@@ -29,7 +29,7 @@ class SignInActivity : AppCompatActivity() {
             val username = editTextEmailUser.text.toString()
             val password = editTextPass.text.toString()
 
-            if(SignInIsValid(username)){
+            if(signInIsValid(username)){
                 val intent = Intent(this, SuccesLogin::class.java)
 
                 intent.putExtra("username", username)
@@ -46,7 +46,7 @@ class SignInActivity : AppCompatActivity() {
 
 }
 
-fun SignInIsValid(username: String): Boolean {
+fun signInIsValid(username: String): Boolean {
     if(username != "andrew"){
         return true
     }
