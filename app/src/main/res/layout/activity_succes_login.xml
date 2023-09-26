@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    tools:context=".SuccesLogin">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#98c1d9"
+        app:cardElevation="0dp"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/textViewSuccessCard"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:gravity="center"
+            android:padding="30dp"
+            android:text="Has ingresado correctamente, ¡Bienvenid@!"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/buttonSucces"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#474E56"
+        android:layout_marginTop="20dp"
+        android:text="Presiona este boton"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

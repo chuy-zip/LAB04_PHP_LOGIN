@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="top|center"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:paddingTop="240dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:textColor="#98c1d9"
+        />
+
+    <!-- Email EditText -->
+    <EditText
+        android:id="@+id/editTextEmailUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email address or username"
+        android:inputType="textEmailAddress"
+        android:gravity="center"
+        android:padding="20dp"
+        android:backgroundTint="#98c1d9"
+        android:textColor="#FF474E56"
+        android:textColorHint="#FF474E56"/>
+
+    <!-- Password EditText -->
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:gravity="center"
+        android:padding="20dp"
+        android:backgroundTint="#98c1d9"
+        android:textColor="#FF474E56"
+        android:textColorHint="#FF474E56"/>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#98c1d9"
+        android:layout_marginTop="10dp"
+        android:text="Log In"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:padding="30dp"
+        android:textSize="24sp"
+        android:textColor="#FF474E56"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
