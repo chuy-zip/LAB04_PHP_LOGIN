@@ -19,10 +19,10 @@ class SuccesLogin : AppCompatActivity() {
         buttonSuccess = findViewById(R.id.buttonSucces)
 
         val username = intent.getStringExtra("username")
-        val password = intent.getStringExtra("password")
+        val jwt = intent.getStringExtra("jwt")
 
         buttonSuccess.setOnClickListener {
-            editTextSuccess.setText("$username y $password")
+            editTextSuccess.setText("Hola $username, este es el token de la llamada al servicio: \n$jwt")
         }
     }
 }

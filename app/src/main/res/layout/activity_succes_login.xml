@@ -29,7 +29,7 @@
             android:padding="30dp"
             android:text="Has ingresado correctamente, ¡Bienvenid@!"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 
     <Button

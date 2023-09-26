@@ -33,7 +33,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_in)
 
         editTextPassConfirm = findViewById(R.id.editTextPassConfirm)
-        editTextUserName = findViewById(R.id.editTextPass)
+        editTextUserName = findViewById(R.id.editTextNewName)
         signInErrorTextView = findViewById(R.id.textViewErrorSignIn)
         editTextEmailUser = findViewById(R.id.editTextEmailUser)
         editTextPass = findViewById(R.id.editTextPass)
@@ -56,7 +56,7 @@ class SignInActivity : AppCompatActivity() {
                         val intent = Intent(applicationContext, SuccesLogin::class.java)
 
                         intent.putExtra("username", username)
-                        intent.putExtra("password", password)
+                        intent.putExtra("jwt", jwt)
 
                         startActivity(intent)
                     }
@@ -68,7 +68,6 @@ class SignInActivity : AppCompatActivity() {
             else{
                 Toast.makeText(this, "Las contraseñas ingresadas no son iguales", Toast.LENGTH_LONG).show()
             }
-
         }
     }
 
@@ -86,7 +85,7 @@ class SignInActivity : AppCompatActivity() {
         println(json.toString())
 
         val request = Request.Builder()
-            .url("http://192.168.43.105/phpFolderPPM/php/public/register.php") // Reemplaza con la URL de tu servidor
+            .url("http://192.168.1.73/phpFolderPPM/php/public/register.php") // Reemplaza con la URL de tu servidor
             .post(requestBody)
             .build()
 
@@ -94,7 +93,7 @@ class SignInActivity : AppCompatActivity() {
             val response = OkHttpClient().newCall(request).execute()
             val responseBody = response.body?.string()
 
-            if (response.isSuccessful && responseBody != null && !responseBody.equals("error_bad_credentials")) {
+            if (response.isSuccessful && responseBody != null && !responseBody.equals("error_username_exists")) {
                 //val jwt = JSONObject(responseBody).getString("jwt")
                 val jwt = responseBody
                 println(jwt)

@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var registerText: TextView
     private lateinit var errorTextView: TextView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -54,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(applicationContext, SuccesLogin::class.java)
 
                     intent.putExtra("username", username)
-                    intent.putExtra("password", password)
+                    intent.putExtra("jwt", jwt)
 
                     startActivity(intent)
                 }
@@ -83,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         println(json.toString())
 
         val request = Request.Builder()
-            .url("http://192.168.43.105/phpFolderPPM/php/public/authenticate.php") // Reemplaza con la URL de tu servidor
+            .url("http://192.168.1.73/phpFolderPPM/php/public/authenticate.php") // Reemplaza con la URL de tu servidor
             .post(requestBody)
             .build()
 
