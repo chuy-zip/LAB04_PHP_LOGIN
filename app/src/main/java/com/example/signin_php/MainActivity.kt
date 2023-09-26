@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editTextPassword: EditText
     private lateinit var buttonLogin: Button
     private lateinit var registerText: TextView
+    private lateinit var errorTextView: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,18 +26,26 @@ class MainActivity : AppCompatActivity() {
         editTextPassword = findViewById(R.id.editTextPassword)
         buttonLogin = findViewById(R.id.buttonLogin)
         registerText = findViewById(R.id.registerText)
+        errorTextView = findViewById(R.id.textViewErrorLogin)
 
         registerText.paintFlags = registerText.paintFlags or Paint.UNDERLINE_TEXT_FLAG
 
         buttonLogin.setOnClickListener {
-            val intent = Intent(this, SuccesLogin::class.java)
             val username = editTextEmailUsername.text.toString()
             val password = editTextPassword.text.toString()
 
-            intent.putExtra("username", username)
-            intent.putExtra("password", password)
+            if(loginIsValid(username,password)){
+                val intent = Intent(this, SuccesLogin::class.java)
 
-            startActivity(intent)
+                intent.putExtra("username", username)
+                intent.putExtra("password", password)
+
+                startActivity(intent)
+            }
+            else {
+                errorTextView.visibility = View.VISIBLE
+            }
+
         }
 
         registerText.setOnClickListener {
@@ -45,4 +55,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+fun loginIsValid(username: String, password: String): Boolean {
+    if(username == "chuy" && password  == "1234"){
+        return true
+    }
 
+    return false
+}
